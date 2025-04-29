@@ -1,0 +1,64 @@
+Problem:
+144 horses.
+Only 12 horses can race at once (because there are 12 tracks).
+No stopwatch is allowed; you can only see the order in which horses finish.
+You must find the fastest 11 horses.
+
+Question: What is the minimum number of races required? Explain the reasoning step-by-step.
+
+Step-by-Step Solution:
+Step 1: Race all horses in groups
+
+Divide 144 horses into 12 groups, each group with 12 horses.
+Conduct 12 races, one for each group.
+After these races, you know the order of horses within each group (1st to 12th), but you cannot compare horses across different groups.
+
+At this point:
+12 races have been used.
+You know the top 12 horses of each group individually, but no direct comparison between groups.
+
+Step 2: Race all the winners of each group
+Now, take the winners (the horses who came first in each group).
+Conduct a race among these 12 winners.
+This race determines the fastest horse overall.
+
+At this point:
+1 more race is conducted (total races so far = 13).
+The winner of this race is the fastest horse among all 144.
+
+Step 3: Identify potential candidates for 2nd to 11th place
+The fastest horse is already found.
+To find the next 10 fastest horses, you only need to consider certain horses:
+Horses that came 2nd and 3rd in the winners' race.
+Horses that came 2nd and 3rd in the same group as the fastest horse.
+Horses that came 2nd and 3rd in the group of the 2nd place horse from the winners' race.
+Horses that came 2nd and 3rd in the group of the 3rd place horse from the winners' race.
+You do not need to consider horses ranked below 3rd in their own groups, because they are slower than the top 3 of their groups and therefore cannot be among the overall top 11.
+
+Step 4: Conduct another race among the selected candidates
+Collect all the potential candidates (about 10 to 15 horses).
+Conduct one more race among these selected horses.
+
+From the result:
+Identify the horses ranked 2nd to 11th overall.
+Combine them with the fastest horse already found.
+
+Calculation of Total Races:
+Action	Number of Races
+Race 144 horses in 12 groups	12
+Race among winners (12 horses)	1
+Race among candidates for 2nd to 11th	1
+Total	14 races minimum
+
+Important Assumptions:
+No two horses tie in any race.
+Horses' performance is consistent (no randomness).
+Track conditions are identical for all races.
+
+Potential Pitfalls:
+If horses perform inconsistently across races, the strategy may fail.
+If there is a tie and no clear order, extra races may be required.
+If track conditions differ across races, results can be misleading.
+
+Final Answer:
+Minimum 14 races are needed to guarantee finding the 11 fastest horses.
